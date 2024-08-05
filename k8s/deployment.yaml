@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: suma-deployment
+  name: division-deployment
   namespace: microservices-ci
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: suma
+      app: division
   template:
     metadata:
       labels:
-        app: suma
+        app: division
     spec:
       containers:
-      - name: suma
-        image: carlosdelgadillo/sumaa:v2
+      - name: division
+        image: carlosdelgadillo/division:v2
         ports:
-        - containerPort: 8085
+        - containerPort: 8006
